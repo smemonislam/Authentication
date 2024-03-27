@@ -17,16 +17,16 @@ This is a Laravel project for [brief description or purpose].
     Copy the .env.example file to .env:
     cp .env.example .env
 
-    Generate a new application key:
-    php artisan key:generate
+## Key Generation
+php artisan key:generate
 
 ## Environment Configuration
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=your_database_name
-DB_USERNAME=your_database_username
-DB_PASSWORD=your_database_password
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=your_database_name
+    DB_USERNAME=your_database_username
+    DB_PASSWORD=your_database_password
 
 ## Database Migration
 
@@ -35,8 +35,7 @@ php artisan migrate
 ## Database Seeding
 php artisan db:seed
 
-## Key Generation
-php artisan key:generate
+
 
 
 # Customizing Authentication
