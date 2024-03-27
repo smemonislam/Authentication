@@ -40,25 +40,25 @@ This is a Laravel project for [brief description or purpose].
 ## Login
 To customize the login functionality:
 
-- **[Create a custom login form in your view.]**
-- **[Customize the login logic in the AuthenticatedSessionController.]**
-- **[Define routes for the login form and logic.]**
+- **Create a custom login form in your view.**
+- **Customize the login logic in the AuthenticatedSessionController.**
+- **Define routes for the login form and logic.**
 
 ## Registration
 To customize the registration functionality:
 
-- **[Create a custom registration form in your view.]**
-- **[Customize the registration logic in the RegisteredUserController.]**
-- **[Define routes for the registration form and logic.]**
+- **Create a custom registration form in your view.**
+- **Customize the registration logic in the RegisteredUserController.**
+- **Define routes for the registration form and logic.**
     
 
 
 ## Profile
 To customize the user profile functionality:
 
-- **[Create a profile view for users to view and edit their information.]**
-- **[Customize the profile update logic in the ProfileController.]**
-- **[Define routes for the profile view and update logic.]**
+- **Create a profile view for users to view and edit their information.**
+- **Customize the profile update logic in the ProfileController.**
+- **Define routes for the profile view and update logic.**
   
 ## Testing
 Make sure to thoroughly test your custom authentication system to ensure it works as expected.
