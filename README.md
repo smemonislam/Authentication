@@ -42,64 +42,52 @@ This is a Laravel project for [brief description or purpose].
 
 # Customizing Authentication
 ## Login
-To customize the login functionality:
+To customize the login functionality and include validation:
 
 - **Create a custom login form in your view.**
 - **Customize the login logic in the AuthenticatedSessionController.**
 - **Define routes for the login form and logic.**
 - **Implement validation for login input fields in the AuthenticatedSessionController using Laravel's validation features.**
 
+    $credentials = $request->validate([
+        'email' => ['required', 'email'],
+        'password' => ['required'],
+    ]);
+
 ## Registration
-To customize the registration functionality:
+To customize the registration functionality and include validation:
 
 - **Create a custom registration form in your view.**
 - **Customize the registration logic in the RegisteredUserController.**
 - **Define routes for the registration form and logic.**
 - **Implement validation for registration input fields in the RegisteredUserController using Laravel's validation features**
-    
 
+    $request->validate([
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+        'password' => ['required', 'confirmed', Password::defaults()],
+    ]);
 
 ## Profile
-To customize the user profile functionality:
+To customize the user profile functionality and include validation:
 
 - **Create a profile view for users to view and edit their information.**
 - **Customize the profile update logic in the ProfileController.**
 - **Define routes for the profile view and update logic.**
 - **Implement validation for profile update input fields in the ProfileController using Laravel's validation features**
+
+    $request->validate([
+        'name' => ['required', 'string', 'max:255'],
+        'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
+        'old_password' => ['required'],
+        'password' => ['required', 'confirmed', Password::defaults()],
+    ]);
   
 ## Testing
 Make sure to thoroughly test your custom authentication system to ensure it works as expected.
 
 ## Conclusion
 Congratulations! You have successfully implemented custom authentication functionality in your Laravel project. For further customization and enhancements, refer to the Laravel documentation and community resources.
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
 ## License
 
