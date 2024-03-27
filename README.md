@@ -4,7 +4,7 @@ This is a Laravel project for [brief description or purpose].
 
 ## Installation
 
-1. Clone the repository:
+Clone the repository or create a new Laravel project:
 
    ```bash
    git clone <repository-url>
@@ -30,12 +30,10 @@ php artisan key:generate
 
 ## Database Migration
 
-php artisan migrate
+    php artisan migrate
 
 ## Database Seeding
-php artisan db:seed
-
-
+    php artisan db:seed
 
 
 # Customizing Authentication
