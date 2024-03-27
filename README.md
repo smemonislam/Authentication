@@ -49,11 +49,6 @@ To customize the login functionality and include validation:
 - **Define routes for the login form and logic.**
 - **Implement validation for login input fields in the AuthenticatedSessionController using Laravel's validation features.**
 
-    $credentials = $request->validate([
-        'email' => ['required', 'email'],
-        'password' => ['required'],
-    ]);
-
 ## Registration
 To customize the registration functionality and include validation:
 
@@ -62,12 +57,6 @@ To customize the registration functionality and include validation:
 - **Define routes for the registration form and logic.**
 - **Implement validation for registration input fields in the RegisteredUserController using Laravel's validation features**
 
-    $request->validate([
-        'name' => ['required', 'string', 'max:255'],
-        'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-        'password' => ['required', 'confirmed', Password::defaults()],
-    ]);
-
 ## Profile
 To customize the user profile functionality and include validation:
 
@@ -75,13 +64,6 @@ To customize the user profile functionality and include validation:
 - **Customize the profile update logic in the ProfileController.**
 - **Define routes for the profile view and update logic.**
 - **Implement validation for profile update input fields in the ProfileController using Laravel's validation features**
-
-    $request->validate([
-        'name' => ['required', 'string', 'max:255'],
-        'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
-        'old_password' => ['required'],
-        'password' => ['required', 'confirmed', Password::defaults()],
-    ]);
   
 ## Testing
 Make sure to thoroughly test your custom authentication system to ensure it works as expected.
