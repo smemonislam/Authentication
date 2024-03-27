@@ -4,7 +4,7 @@ This is a Laravel project for [brief description or purpose].
 
 ## Installation
 
-Clone the repository or create a new Laravel project:
+1. Clone the repository:
 
    ```bash
    git clone <repository-url>
@@ -18,7 +18,7 @@ Clone the repository or create a new Laravel project:
     cp .env.example .env
 
 ## Key Generation
-php artisan key:generate
+    php artisan key:generate
 
 ## Environment Configuration
     DB_CONNECTION=mysql
